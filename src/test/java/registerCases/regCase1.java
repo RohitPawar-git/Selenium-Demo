@@ -1,3 +1,4 @@
+package registerCases;
 import static org.testng.Assert.assertEquals;
 
 import java.time.Duration;
@@ -9,10 +10,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-@Test
-public class test {
 
-	public static void main(String[] args) {
+public class regCase1 {
+
+	@Test
+	public void Test1 () {
 		// TODO Auto-generated method stub
 		
 		WebDriver driver = new ChromeDriver();
@@ -48,4 +50,5 @@ public class test {
 		s=s.replaceAll(" ","");
 		return "Rohitpawar"+ s + "@gmail.com";
 	}
+
 }
