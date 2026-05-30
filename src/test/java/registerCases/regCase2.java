@@ -16,7 +16,7 @@ public class regCase2 {
 	
 	@Test
 	@BeforeTest
-	void test2()
+	public void test2()
 	{
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();

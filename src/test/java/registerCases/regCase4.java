@@ -1,8 +1,5 @@
 package registerCases;
-
-import java.sql.DriverManager;
 import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class regCase4 {
 	@Test
-	void testCase4()
+	public void testCaseWarningMessages()
 	{
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -34,6 +31,7 @@ public class regCase4 {
 		Assert.assertEquals(driver.findElement(By.xpath("//span[@data-valmsg-for=\"ConfirmPassword\"]")).getText(), ConfirmPasswordwarningString);
 		
 		driver.close();
+		driver.quit();
 	}
 
 }

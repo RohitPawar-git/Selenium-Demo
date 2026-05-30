@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 public class regCase3 {
 
 	@Test
-	void test3()
+	public void test3()
 	{
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
