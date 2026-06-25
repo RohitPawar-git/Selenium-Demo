@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class regCase6 {
 
 	@Test
-	 public void previouslyUsedCrediantials()
+	 public void misMatchPasswordValidation()
 	{
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -25,11 +25,13 @@ public class regCase6 {
 		driver.findElement(By.id("LastName")).sendKeys("Pawar");
 		driver.findElement(By.id("Email")).sendKeys("Rohit1@gmail.com");
 		driver.findElement(By.id("Password")).sendKeys("pass12345");
-		driver.findElement(By.id("ConfirmPassword")).sendKeys("pass12345");
+		driver.findElement(By.id("ConfirmPassword")).sendKeys("Wrong@5678");
 		driver.findElement(By.id("register-button")).click();
-		String emailconfirmqationString = "The specified email already exists";
-		assertEquals(driver.findElement(By.className("validation-summary-errors")).getText(), emailconfirmqationString);
+		
+		String validationString = "The password and confirmation password do not match.";
+		assertEquals(driver.findElement(By.xpath("//span[@for=\"ConfirmPassword\"]")).getText(), validationString);
 		driver.close();
 		driver.quit();
+
 	}
 }

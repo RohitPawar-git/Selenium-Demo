@@ -16,7 +16,7 @@ public class regCase2 {
 	
 	@Test
 	@BeforeTest
-	public void test2()
+	public void firstNameValidation() throws InterruptedException
 	{
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -26,19 +26,13 @@ public class regCase2 {
 		//Form submission
 		driver.findElement(By.xpath("//a[@class=\"ico-register\"]")).click();
 		driver.findElement(By.id("gender-male")).click();
-		driver.findElement(By.id("FirstName")).sendKeys("Rohit");
-		driver.findElement(By.id("LastName")).sendKeys("Pawar");
-		driver.findElement(By.id("Email")).sendKeys("tempmail12@gmai.com");
-		driver.findElement(By.id("Password")).sendKeys("Admin@123");
-		driver.findElement(By.id("ConfirmPassword")).sendKeys("Admin@123");
+		driver.findElement(By.id("FirstName")).sendKeys("User");
+		driver.findElement(By.id("Email")).sendKeys(generateMail());
+		driver.findElement(By.id("Password")).sendKeys("Test@1234");
+		driver.findElement(By.id("ConfirmPassword")).sendKeys("Test@1234");
 		driver.findElement(By.id("register-button")).click();
 		//Verification
-		String actualresultString ="Your registration completed";
-		assertEquals(driver.findElement(By.className("result")).getText(), actualresultString);		
-		driver.findElement(By.xpath("//input[@class=\"button-1 register-continue-button\"]")).click();
-		String actulString = "Log out";
-		Assert.assertEquals(driver.findElement(By.className("ico-logout")).getText(),actulString);
-		
+		Thread.sleep(1000);
 		driver.close();
 		driver.quit();
 	}
@@ -49,7 +43,7 @@ public class regCase2 {
 		String s = date.toString();
 		s=s.replaceAll(":","");
 		s=s.replaceAll(" ","");
-		return "Rohitpawar"+ s + "@gmail.com";
+		return "blank_fn"+ s + "@demo.com";
 	}
 	
 

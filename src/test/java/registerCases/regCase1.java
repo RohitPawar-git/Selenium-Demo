@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 public class regCase1 {
 
 	@Test
-	public void Test1 () {
+	public void registerSuccess () {
 		// TODO Auto-generated method stub
 		
 		WebDriver driver = new ChromeDriver();
@@ -25,11 +25,11 @@ public class regCase1 {
 		//Form submission
 		driver.findElement(By.xpath("//a[@class=\"ico-register\"]")).click();
 		driver.findElement(By.id("gender-male")).click();
-		driver.findElement(By.id("FirstName")).sendKeys("Rohit");
-		driver.findElement(By.id("LastName")).sendKeys("Pawar");
+		driver.findElement(By.id("FirstName")).sendKeys("test");
+		driver.findElement(By.id("LastName")).sendKeys("user");
 		driver.findElement(By.id("Email")).sendKeys(generateMail());
-		driver.findElement(By.id("Password")).sendKeys("Admin@123");
-		driver.findElement(By.id("ConfirmPassword")).sendKeys("Admin@123");
+		driver.findElement(By.id("Password")).sendKeys("Test@1234");
+		driver.findElement(By.id("ConfirmPassword")).sendKeys("Test@1234");
 		driver.findElement(By.id("register-button")).click();
 		//Verification
 		String actualresultString ="Your registration completed";
@@ -48,7 +48,7 @@ public class regCase1 {
 		String s = date.toString();
 		s=s.replaceAll(":","");
 		s=s.replaceAll(" ","");
-		return "Rohitpawar"+ s + "@gmail.com";
+		return "testuser_auto"+ s + "@demo.com";
 	}
 
 }
